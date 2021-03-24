@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import getWeather from "./WeatherAPI";
 
+// eslint-disable-next-line no-extend-native
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
-ReactDOM.render(
+export const app = ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,

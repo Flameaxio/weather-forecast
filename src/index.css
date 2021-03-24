@@ -33,6 +33,7 @@ code {
   margin-left: auto;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 @media (min-width: 768px) {
   .container {
@@ -75,3 +76,30 @@ code {
   align-items: center;
   flex-direction: column;
 }
+
+.hourly-weather{
+  margin-top: -2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hourly-weather .section{
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-between;
+  border-top: black solid 1px;
+  width: 25%;
+}
+
+.hourly-weather .section img{
+  height: auto;
+  max-width: 50%;
+}
+
+.hourly-weather .section p{
+  display: block;
+}
+

@@ -42,22 +42,27 @@ function getDayName(date) {
 }
 
 class DayCard extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
-
     render() {
+        if(this.props.weather === null){
+            return (
+                <>
+                    <div className={'day'}></div>
+                </>
+            )
+        }
         let imagePath = `./icons/${this.props.weather.name}.png`
         const borderBottom = this.props.status ? 0 : 2;
         return (
-            <div className={'day'} onClick={() => this.props.clickHandler(this.props.id)} style={{borderBottomWidth: borderBottom}}>
-                <h4 className={'day-title'}>{getDayName(this.props.day)}</h4>
-                <p className={'day-date'}>{getDateString(this.props.day)}</p>
-                <img className={'day-weather-image'} src={imagePath} alt="#"/>
-                <h4 className={'day-temperature'}>{this.props.weather.temperature} C°</h4>
-                <p className={'day-weather'}>{this.props.weather.name}</p>
-            </div>
+            <>
+                <div className={'day'} onClick={() => this.props.clickHandler(this.props.id)}
+                     style={{borderBottomWidth: borderBottom}}>
+                    <h4 className={'day-title'}>{getDayName(this.props.day)}</h4>
+                    <p className={'day-date'}>{getDateString(this.props.day)}</p>
+                    <img className={'day-weather-image'} src={imagePath} alt="#"/>
+                    <h4 className={'day-temperature'}>{this.props.weather.temperature} C°</h4>
+                    <p className={'day-weather'}>{this.props.weather.name}</p>
+                </div>
+            </>
         )
     }
 }
