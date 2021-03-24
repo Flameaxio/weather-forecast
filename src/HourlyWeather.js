@@ -10,9 +10,9 @@ class HourlyWeather extends React.Component{
             const temperature = this.props.temperature[i];
             let imagePath = `./icons/${weather}.png`
             sections.push(
-                <div className={className}>
+                <div key={i*8} className={className}>
                     <p className={'time'}>{time}</p>
-                    <img src={imagePath} className="weather"/>
+                    <img src={imagePath} className="weather" alt={weather}/>
                     <p className="temperature">{temperature}  C°</p>
                 </div>
             )

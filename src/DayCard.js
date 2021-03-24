@@ -58,7 +58,7 @@ class DayCard extends React.Component {
                      style={{borderBottomWidth: borderBottom}}>
                     <h4 className={'day-title'}>{getDayName(this.props.day)}</h4>
                     <p className={'day-date'}>{getDateString(this.props.day)}</p>
-                    <img className={'day-weather-image'} src={imagePath} alt="#"/>
+                    <img className={'day-weather-image'} src={imagePath} alt={this.props.weather.name}/>
                     <h4 className={'day-temperature'}>{this.props.weather.temperature} C°</h4>
                     <p className={'day-weather'}>{this.props.weather.name}</p>
                 </div>

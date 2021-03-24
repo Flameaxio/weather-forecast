@@ -44,7 +44,7 @@ class App extends React.Component {
         const date = new Date();
         let days = [];
         for (let i = 0; i < 5; i++) {
-            days.push(<DayCard day={date.setDate(date.getDate() + 1)}
+            days.push(<DayCard key={date} day={date.setDate(date.getDate() + 1)}
                                weather={this.getWeather(i)}
                                status={i === this.state.selected}
                                clickHandler={this.handleClick}
